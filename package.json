@@ -1,5 +1,5 @@
 {
-  "name": "RandomColor",
+  "name": "randomColor",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "testEnvironment": "jsdom"
   },
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --passWithNoTests",
     "test:watch": "npm run test -- --watch",
     "start": "webpack serve --hot --mode development --devtool eval-source-map",
     "build": "webpack --devtool source-map"
@@ -24,6 +24,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "randomcolor": "^0.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
