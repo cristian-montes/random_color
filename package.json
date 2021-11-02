@@ -1,5 +1,5 @@
 {
-  "name": "randomcolor",
+  "name": "randomColor",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -24,6 +24,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "randomcolor": "^0.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

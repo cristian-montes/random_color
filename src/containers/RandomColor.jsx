@@ -1,44 +1,40 @@
 import React, { Component } from 'react';
 import RandomDisplay from '../components/color-selector/RandomDisplay.jsx'
 
+
 class RandomColor extends Component {
- state = {
-     showingColor: 'pink',
- };
+    state = {
+        showingColor: 'pink',
+    };
 
- 
-//  changeColorState = (color) => {
-//      const wildNumber = Math.floor(Math.random()* color.length);
-//      const ranColor = color[wildNumber];
-//      console.log(ranColor);
-//      this.setState({ showingColor: ranColor })
-//      console.log({showingColor})
-//     };
-    
-componentDidMount(){
-    setInterval(() => {
-        const colores = ['red', 'yellow', 'blue', 'green', 'violet', 'teal', 'gold'];
+    generateRandomColor(){
+        const colores = ['red', 'yellow', 'blue', 'green', 'violet', 'teal', 'gold', 'fusia', 'Android green', 'Almond', 'Aquamarine'];
+
         const wildNumber = Math.floor(Math.random()* colores.length);
-             const ranColor = colores[wildNumber];
-             console.log(ranColor);
-             this.setState({ showingColor: ranColor })
-    }, 1000)
-}
+
+        return colores[wildNumber];
+    }
+
+    
+    componentDidMount(){
+        setInterval(() => {     
+                this.setState({ showingColor: this.generateRandomColor() })
+        }, 1000)
+    }
 
 
 
 
 
-render() {   
-    const { showingColor } = this.state;
-    return(
-        <div>
-            <h1>The random color generator</h1>
-            <RandomDisplay showingColor = {showingColor}/>
+    render() {   
+        const { showingColor } = this.state;
+        return(
+            <div>
+                <RandomDisplay showingColor = {showingColor}/>
 
-        </div>
-    )
-}
+            </div>
+        )
+    }
  
 }
 
