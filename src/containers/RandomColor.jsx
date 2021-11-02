@@ -3,23 +3,40 @@ import RandomDisplay from '../components/color-selector/RandomDisplay.jsx'
 
 class RandomColor extends Component {
  state = {
-     showingColor: 'red',
+     showingColor: 'pink',
  };
 
- changeColorState = (colores) => {
-     this.setState({ showingColor: colores })
- };
+ 
+//  changeColorState = (color) => {
+//      const wildNumber = Math.floor(Math.random()* color.length);
+//      const ranColor = color[wildNumber];
+//      console.log(ranColor);
+//      this.setState({ showingColor: ranColor })
+//      console.log({showingColor})
+//     };
+    
+componentDidMount(){
+    setInterval(() => {
+        const colores = ['red', 'yellow', 'blue', 'green', 'violet', 'teal', 'gold'];
+        const wildNumber = Math.floor(Math.random()* colores.length);
+             const ranColor = colores[wildNumber];
+             console.log(ranColor);
+             this.setState({ showingColor: ranColor })
+    }, 1000)
+}
 
-render(){
-    const colores = ['red', 'yellow', 'blue', 'green', 'violet', 'teal', 'gold'];
+
+
+
+
+render() {   
     const { showingColor } = this.state;
     return(
-        <>
+        <div>
             <h1>The random color generator</h1>
-            {/* <SmartColor/> */}
-            <RandomDisplay showingColor={showingColor}/>
+            <RandomDisplay showingColor = {showingColor}/>
 
-        </>
+        </div>
     )
 }
  

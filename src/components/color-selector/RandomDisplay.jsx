@@ -1,6 +1,7 @@
 import React from "react";
 
-const RandomDisplay = ({ showingColor }) => {
+const RandomDisplay = ({ showingColor}) => {
+    
     return(
         <div
             style={{ 
